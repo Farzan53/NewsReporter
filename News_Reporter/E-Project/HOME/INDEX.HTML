@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar with Logo, Dropdown, Header, Cards, and Videos</title>
+  <style>
+    /* Basic CSS for the header and navbar */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header Styling */
+    header {
+      background-color: #4CAF50; /* Green background for the header */
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Navbar Styling */
+    .navbar {
+      background-color: #333;
+      overflow: hidden;
+    }
+
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* Logo Styling */
+    .navbar .logo {
+      font-size: 20px;
+      font-weight: bold;
+      padding: 10px 20px;
+    }
+
+    /* Dropdown container */
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+
+    .dropdown .dropbtn {
+      background-color: #333;
+      color: white;
+      padding: 14px 20px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Dropdown content */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      min-width: 160px;
+      z-index: 1;
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: #ddd;
+      color: black;
+    }
+
+    /* Grid container for the cards */
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Auto-responsive grid */
+      gap: 20px; /* Gap between cards */
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    /* Individual Card Styling */
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px); /* Card hover effect */
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+      max-height: 200px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 15px 0;
+      font-size: 18px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* Grid container for the videos */
+    .video-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Auto-responsive grid for videos */
+      gap: 20px; /* Gap between videos */
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    /* Video Styling */
+    .video {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .video iframe {
+      width: 100%;
+      height: 200px;
+      border-radius: 8px;
+    }
+
+    .video p {
+      font-size: 14px;
+      color: #555;
+      margin-top: 10px;
+    }
+
+    /* Horizontal Card Section */
+    .horizontal-cards-container {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    .horizontal-card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Box shadow */
+      width: 250px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .horizontal-card:hover {
+      transform: translateY(-10px); /* Hover effect */
+    }
+
+    .horizontal-card h4 {
+      font-size: 22px;
+      color: #333;
+      margin: 10px 0;
+    }
+
+    .horizontal-card p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* FOOTER */
+    footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+
+        footer div {
+            flex: 1;
+            padding: 10px;
+        }
+
+        footer h3 {
+            margin-top: 0;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons a {
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        .social-icons a:hover {
+            color: #ff9800;
+        }
+
+        .map {
+            flex: 1;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .map iframe {
+            width: 80%;
+            height: 300px;
+            border: 0;
+            margin: 0 auto;
+        }
+
+        /* Ensure footer sections don't stretch too much on wide screens */
+        footer div {
+            min-width: 250px;
+        }
+
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Welcome to Our Website</h1>
+    <p>Your go-to platform for all things amazing!</p>
+  </header>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="index.html" class="logo">
+      <img src="your-logo.png" alt="Logo" style="height: 30px;">
+    </a>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+
+    <!-- Dropdown Menu -->
+    <div class="dropdown">
+      <button class="dropbtn">More</button>
+      <div class="dropdown-content">
+        <a href="#about">About Us</a>
+        <a href="#team">Team</a>
+        <a href="#careers">Careers</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Horizontal Cards Section -->
+  <section>
+    <h2 style="text-align:center; margin-top: 40px;">Our Featured Services</h2>
+    <div class="horizontal-cards-container">
+      <!-- Horizontal Card 1 -->
+      <div class="horizontal-card">
+        
+        <img src="../Pics/china flag.jpg">
+        <h4>China</h4>
+        <p>Discover the best service for your needs with outstanding quality and support.</p>
+      </div>
+      <!-- Horizontal Card 2 -->
+      <div class="horizontal-card">
+        <img src="../Pics/india flag.jpg">
+        <h4>India</h4>
+        <p>Enhance your experience with our customized service tailored to your requirements.</p>
+      </div>
+      <!-- Horizontal Card 3 -->
+      <div class="horizontal-card" >
+        <img src="../Pics/pakistan flag.jpg">
+        <h4>Pakistan</h4>
+        <p>Innovative solutions to drive your business forward and make a significant impact.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Heading Before 10 Cards Section -->
+  <section>
+    <h2 style="text-align:center; margin-top: 40px;">Explore Our Latest News</h2>
+  </section>
+
+  <!-- Card Grid Section -->
+  <div class="card-container">
+    <!-- Card 1 -->
+    <div class="card">
+      <img src="../Pics/trump.jpg" alt="Card 1">
+      <h3>Trump will impose Canada, Mexico, China tariffs today</h3>
+      <p>“The February 1st deadline that President Trump put into place at a statement several weeks ago 
+        continues,” White House spokeswoman Karoline Leavitt told reporters Friday.
+        She added that the issue remains the flow of illegal fentanyl.      
+       </p>
+    </div>
+    <!-- Card 2 -->
+    <div class="card">
+      <img src="../Pics/india.avif" alt="Card 2">
+      <h3>India must guard against ‘excessive financialisation’, warns Economic Survey</h3>
+      <p>The Economic Survey 2024-25 has warned that excessive financialisation can harm the economy, with 
+        potentially severe consequences for a low-middle-income country like India.</p>
+    </div>
+    <!-- Card 3 -->
+    <div class="card">
+      <img src="../Pics/pakistan.jpg" alt="Card 3">
+      <h3>'Pakistan needs $100b financing'</h3>
+      <p>The statement underscores the country's dependency on foreign creditors, which has limited its
+        options and hindered its desire for rapid economic growth due to weakened economic fundamentals.</p>
+    </div>
+    <!-- Card 4 -->
+    <div class="card">
+      <img src="../Pics/deepseek.webp" alt="Card 4">
+      <h3>China’s DeepSeek faces questions over claims after shaking up global tech</h3>
+      <p>After causing shockwaves with an AI model with capabilities rivalling the creations of Google and
+         OpenAI, China’s DeepSeek is facing questions about whether its bold claims stand up to scrutiny.</p>
+    </div>
+    <!-- Card 5 -->
+    <div class="card">
+      <img src="../Pics/india sports.jpg" alt="Card 5">
+      <h3>India beat England by 15 runs: fourth cricket T20I – as it happened</h3>
+      <p>The match at Maharashtra Cricket Association Stadium in Pune, India, saw England elect to field with 
+        Hardik Pandya and Shivam Dube both hitting 53 in India’s 181-9.</p>
+    </div>
+    <!-- Card 6 -->
+    <div class="card">
+      <img src="../Pics/pak culture.jpg" alt="Card 6">
+      <h3>Gandhara Cultural Festival opens with focus on heritage preservation</h3>
+      <p>The much -anticipated Gandhara Cultural Festival, marking the launch of the "Promoting Gandhara’s 
+        Civil­isation & Heritage for Sustainable Eco -Tourism" project, was officially inaugurated at the
+         Pakistan National Council of Arts.</p>
+    </div>
+    <!-- Card 7 -->
+    <div class="card">
+      <img src="../Pics/india culture.webp" alt="Card 7">
+      <h3>Temples, treasures and trade: The astonishing legacy of India's Chola dynasty</h3>
+      <p>Europe is in flux. The powerful nations we know today - like Norman-ruled England and the fragmented
+         territories that will go on to become France - do not yet exist. Towering Gothic cathedrals have yet
+         to rise.</p>
+    </div>
+    <!-- Card 8 -->
+    <div class="card">
+      <img src="../Pics/china&uk.jpg" alt="Card 8">
+      <h3>China-UK Economic Ties: Trade, Investment, and 2025 Prospects</h3>
+      <p>After years of strained ties, the UK and China are cautiously re-engaging, driven by economic 
+        pragmatism rather than political alignment. The visit of UK chancellor of the exchequer, Rachel 
+        Reeves, to China from January 11th to 13th marked a measured step in this process.</p>
+    </div>
+    <!-- Card 9 -->
+    <div class="card">
+      <img src="../Pics/pak news.webp" alt="Card 9">
+      <h3>Pakistan sacks, blacklists dozens of officials after Mediterranean deaths</h3>
+      <p>When Pakistan’s Prime Minister Shehbaz Sharif removed Ahmed Ishaq Jahangir from his position as the
+         chief of the country’s Federal Investigation Agency (FIA) on Wednesday, he became the highest-profile
+          casualty in a sweeping organisational purge following the deaths of at least 43 Pakistanis off the 
+          coast of Morocco earlier in January.</p>
+    </div>
+    <!-- Card 10 -->
+    <div class="card">
+      <img src="../Pics/china culture.jpg" alt="Card 10">
+      <h3>China sees booming holiday consumption driven by longer trips, culture craze</h3>
+      <p>Various events were held across China on Wednesday to celebrate the Spring Festival. Tourists visit a
+         Spring Festival temple fair at Ditan Park in Beijing, capital of China.ourists buy souvenirs at the
+          Anhui Museum in Hefei, East China's Anhui province</p>
+    </div>
+  </div>
+
+  <!-- Heading After 10 Cards Section -->
+  <section>
+    <h2 style="text-align:center; margin-top: 40px;">Thank You for Exploring!</h2>
+  </section>
+
+  <!-- Video Grid Section -->
+  <div class="video-container">
+    <!-- Video 1 -->
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <p>Muhajir Culture Day: MQM Pakistan Hosts Grand Celebration | Breaking News </p>
+    </div>
+    <!-- Video 2 -->
+    <div class="video">
+      <iframe src="https://youtu.be/8pYMGKr6crM?si=R_-8_l38ObFKZI4O" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <p>Controversial plan to overhaul of India's elections</p>
+    </div>
+    <!-- Video 3 -->
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <p>Video 3 Description: A third video to add more variety.</p>
+    </div>
+    <!-- Video 4 -->
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <p>Video 4 Description: Another great example video for your collection.</p>
+    </div>
+  </div>
+
+
+    <!-- Footer Section -->
+    <footer>
+      <!-- Contact Us Section -->
+      <div>
+          <h3>Contact Us</h3>
+          <p>Email: info@example.com</p>
+          <p>Phone: +1 234 567 890</p>
+          <p>Address: 123 Main Street, City, Country</p>
+      </div>
+
+      <!-- Follow Us Section with Icons -->
+      <div class="social-icons">
+          <h3>Follow Us</h3>
+          <a href="https://www.facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+
+      <!-- About Section -->
+      <div>
+          <h3>About Us</h3>
+          <p>We are a company dedicated to providing the best services. Our mission is to ensure customer satisfaction.</p>
+          <a href="/about">Learn more</a>
+      </div>
+
+      <!-- Map Section -->
+      <div class="map">
+          <h3>Our Location</h3>
+          <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0859872214067!2d-122.4194153846811!3d37.77492967975956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808d003a53cf%3A0xa4e083b9a5bfa169!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1635292824559!5m2!1sen!2sin"
+              allowfullscreen="" loading="lazy"></iframe>
+      </div>
+  </footer>
+    
+
+</body>
+</html>

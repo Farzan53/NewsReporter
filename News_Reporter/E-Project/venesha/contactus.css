@@ -1,0 +1,240 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Basic Layout */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+}
+
+header .logo h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+nav ul li a:hover {
+    color: #f39c12;
+}
+
+/* Main Section Styling */
+main {
+    padding: 30px;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    /* background-color: #fff; */  background-color: #fff7f2;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+.contact-container p {
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* Form Styling */
+.contact-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 1em;
+    color: #333;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #f39c12;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #e67e22;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer .footer-content ul {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+footer .footer-content ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+footer .footer-content ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer .footer-content ul li a:hover {
+    color: #f39c12;
+}
+/* Contact Form Background Image */
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-image: url('images/background6.avif'); /* Path to your image */
+    background-size: cover;  /* Ensure the image covers the contact form */
+    background-position: center center; /* Center the image */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+}
+/* General Reset */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header and Navigation Styling */
+header {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+/* Navigation Styling */
+nav ul {
+    list-style-type: none;
+    display: flex; /* Flexbox to align items horizontally */
+    justify-content: center; /* Center the items */
+    align-items: center; /* Vertically align the items */
+    padding-left: 0; /* Remove padding */
+}
+
+nav ul li {
+    margin-right: 30px; /* Add space between each list item */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: flex; /* Use flex to align icon and text horizontally */
+    align-items: center; /* Align the icon and text vertically */
+    justify-content: center; /* Center the text horizontally */
+    transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+/* Icon styling */
+nav ul li a i {
+    font-size: 1.5em;
+    margin-right: 10px; /* Adds space between the icon and text */
+    transition: color 0.3s ease; /* Smooth transition for color */
+}
+
+/* Hover Effects on Icon and Text */
+nav ul li a:hover {
+    color: #f39c12; /* Text color change on hover */
+}
+
+nav ul li a:hover i {
+    color: #f39c12; /* Icon color change on hover */
+}
+
+/* Facebook Icon Default Color */
+nav ul li a .bi-facebook {
+    color: #3b5998; /* Default Facebook Blue */
+}
+
+/* Twitter Icon Default Color */
+nav ul li a .bi-twitter {
+    color: #1da1f2; /* Default Twitter Blue */
+}
+
+/* Instagram Icon Default Color */
+nav ul li a .bi-instagram {
+    color: #e1306c; /* Default Instagram Pink */
+}
+
+/* Facebook Icon Hover Color */
+nav ul li a:hover .bi-facebook {
+    color: #8b9dc3; /* Lighter Facebook blue on hover */
+}
+
+/* Twitter Icon Hover Color */
+nav ul li a:hover .bi-twitter {
+    color: #1da1f2; /* Keep Twitter blue on hover (or change if needed) */
+}
+
+/* Instagram Icon Hover Color */
+nav ul li a:hover .bi-instagram {
+    color: #bc2a8d; /* Lighter Instagram pink on hover */
+}
+
